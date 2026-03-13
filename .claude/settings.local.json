@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add index.html && git commit -m \"Update placeholder text\" && git push)",
+      "Bash(git pull --rebase origin main && git push)",
+      "Bash(open \"/Users/colemanmartinis/Desktop/coleman.rocks/index.html\")",
+      "Bash(git add index.html background.png && git commit -m \"Add wood background image\" && git push)",
+      "Bash(git add index.html aboutcolemanpolaroid.png && git commit -m \"Add draggable polaroid to desk\" && git push)",
+      "Bash(git add . && git commit -m \"Add draggable items with click-to-navigate, replace PNGs with tighter crops\" && git push)"
+    ]
+  }
+}

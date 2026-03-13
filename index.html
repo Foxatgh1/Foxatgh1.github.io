@@ -27,15 +27,18 @@
     }
     .draggable img {
       display: block;
-      width: 660px;
       pointer-events: none;
     }
   </style>
 </head>
 <body>
 
-  <div class="draggable" style="left: 80px; top: 80px;">
-    <img src="aboutcolemanpolaroid.png" alt="About Coleman">
+  <div class="draggable" data-href="about.html" style="left: 80px; top: 80px;">
+    <img src="aboutcolemanpolaroid.png" alt="About Coleman" style="width: 220px;">
+  </div>
+
+  <div class="draggable" data-href="armyourself.html" style="left: 800px; top: 80px;">
+    <img src="armyourselfbook.png" alt="Arm Yourself" style="width: 220px;">
   </div>
 
   <script>
@@ -50,8 +53,10 @@
 
         const startX = e.clientX - el.offsetLeft;
         const startY = e.clientY - el.offsetTop;
+        let dragged = false;
 
         function onMove(e) {
+          dragged = true;
           el.style.left = (e.clientX - startX) + 'px';
           el.style.top  = (e.clientY - startY) + 'px';
         }
@@ -59,6 +64,9 @@
         function onUp() {
           document.removeEventListener('mousemove', onMove);
           document.removeEventListener('mouseup', onUp);
+          if (!dragged && el.dataset.href) {
+            window.location.href = el.dataset.href;
+          }
         }
 
         document.addEventListener('mousemove', onMove);
