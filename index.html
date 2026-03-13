@@ -12,12 +12,60 @@
     html, body {
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }
     body {
       background: url('background.png') center center / cover no-repeat;
     }
+    .draggable {
+      position: absolute;
+      cursor: grab;
+      user-select: none;
+    }
+    .draggable:active {
+      cursor: grabbing;
+    }
+    .draggable img {
+      display: block;
+      width: 660px;
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
+
+  <div class="draggable" style="left: 80px; top: 80px;">
+    <img src="aboutcolemanpolaroid.png" alt="About Coleman">
+  </div>
+
+  <script>
+    let highestZ = 10;
+
+    document.querySelectorAll('.draggable').forEach(el => {
+      el.addEventListener('mousedown', e => {
+        e.preventDefault();
+
+        highestZ++;
+        el.style.zIndex = highestZ;
+
+        const startX = e.clientX - el.offsetLeft;
+        const startY = e.clientY - el.offsetTop;
+
+        function onMove(e) {
+          el.style.left = (e.clientX - startX) + 'px';
+          el.style.top  = (e.clientY - startY) + 'px';
+        }
+
+        function onUp() {
+          document.removeEventListener('mousemove', onMove);
+          document.removeEventListener('mouseup', onUp);
+        }
+
+        document.addEventListener('mousemove', onMove);
+        document.addEventListener('mouseup', onUp);
+      });
+    });
+  </script>
+
 </body>
 </html>
