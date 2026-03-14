@@ -8,7 +8,10 @@
       "Bash(git add index.html aboutcolemanpolaroid.png && git commit -m \"Add draggable polaroid to desk\" && git push)",
       "Bash(git add . && git commit -m \"Add draggable items with click-to-navigate, replace PNGs with tighter crops\" && git push)",
       "Bash(open \"/Users/colemanmartinis/Desktop/coleman.rocks/about.html\")",
-      "Bash(git add . && git commit -m \"Build out About Coleman page with text, animations, and mascots\" && git push)"
+      "Bash(git add . && git commit -m \"Build out About Coleman page with text, animations, and mascots\" && git push)",
+      "Bash(open \"/Users/colemanmartinis/Desktop/coleman.rocks/resume.html\")",
+      "Bash(cp \"/Users/colemanmartinis/Downloads/colemanresume.png\" \"/Users/colemanmartinis/Desktop/coleman.rocks/resume.png\" && sips -g pixelWidth -g pixelHeight \"/Users/colemanmartinis/Desktop/coleman.rocks/resume.png\")",
+      "Bash(git add . && git commit -m \"Add interactive hover zones to resume page\" && git push)"
     ]
   }
 }
