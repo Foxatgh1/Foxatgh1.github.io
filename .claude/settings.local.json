@@ -12,7 +12,8 @@
       "Bash(open \"/Users/colemanmartinis/Desktop/coleman.rocks/resume.html\")",
       "Bash(cp \"/Users/colemanmartinis/Downloads/colemanresume.png\" \"/Users/colemanmartinis/Desktop/coleman.rocks/resume.png\" && sips -g pixelWidth -g pixelHeight \"/Users/colemanmartinis/Desktop/coleman.rocks/resume.png\")",
       "Bash(git add . && git commit -m \"Add interactive hover zones to resume page\" && git push)",
-      "Bash(git add . && git commit -m \"Complete interactive resume with hover zones, animations, and commentary\" && git push)"
+      "Bash(git add . && git commit -m \"Complete interactive resume with hover zones, animations, and commentary\" && git push)",
+      "Bash(git add . && git commit -m \"Add Coleman and Zoe montage to About page\" && git push)"
     ]
   }
 }
