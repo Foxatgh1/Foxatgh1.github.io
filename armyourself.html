@@ -4,7 +4,98 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arm Yourself</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      background: url('greenstarrywallpaper.png') repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .shelf-container {
+      position: relative;
+      /* Maintain 3:2 aspect ratio, fill as much viewport as possible */
+      width: min(100vw, 150vh);
+      height: min(100vh, 66.67vw);
+    }
+    .shelf-container img.bg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .book {
+      position: absolute;
+      cursor: pointer;
+    }
+    .book img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+  </style>
 </head>
 <body>
+  <div class="shelf-container">
+    <img class="bg" src="bookshelves.png" alt="Bookshelf">
+
+    <!-- Gutenberg -->
+    <a class="book" href="https://www.gutenberg.org" target="_blank" style="right: 2%; bottom: 2.3%; height: 48%;">
+      <img src="gutenbergbook.png" alt="Gutenberg">
+    </a>
+
+    <!-- Poets -->
+    <a class="book" href="https://poets.org" target="_blank" style="right: calc(2% + 7.15%); bottom: 2.5%; height: 48%;">
+      <img src="poetsbook.png" alt="Poets">
+    </a>
+
+    <!-- Oyez -->
+    <a class="book" href="https://www.oyez.org" target="_blank" style="right: calc(2% + 7.15% + 7.15%); bottom: 5.1%; height: 48%;">
+      <img src="oyezbook.png" alt="Oyez">
+    </a>
+
+    <!-- Library of Congress -->
+    <a class="book" href="https://www.loc.gov" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14%); bottom: 5.1%; height: 48%;">
+      <img src="libraryofcongressbook.png" alt="Library of Congress">
+    </a>
+
+    <!-- LegiScan -->
+    <a class="book" href="https://legiscan.com" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26%); bottom: 5.1%; height: 48%;">
+      <img src="legiscanbook.png" alt="LegiScan">
+    </a>
+
+    <!-- David Rumsey -->
+    <a class="book" href="https://www.davidrumsey.com" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26% + 7.43%); bottom: 5.1%; height: 48%;">
+      <img src="davidrumseybook.png" alt="David Rumsey">
+    </a>
+
+    <!-- Smithsonian -->
+    <a class="book" href="https://www.si.edu/explore" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26% + 7.43% + 7.41%); bottom: 5.1%; height: 48%;">
+      <img src="smithsonianbook.png" alt="Smithsonian">
+    </a>
+
+    <!-- Wikisource -->
+    <a class="book" href="https://wikisource.org" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26% + 7.43% + 7.41% + 7.57%); bottom: 5.1%; height: 48%;">
+      <img src="wikisourcebook.png" alt="Wikisource">
+    </a>
+
+    <!-- OneLook -->
+    <a class="book" href="https://www.onelook.com" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26% + 7.43% + 7.41% + 7.57% + 7.44%); bottom: 5.1%; height: 48%;">
+      <img src="onelookbook.png" alt="OneLook">
+    </a>
+
+    <!-- OpenSecrets -->
+    <a class="book" href="https://www.opensecrets.org" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26% + 7.43% + 7.41% + 7.57% + 7.44% + 7.49%); bottom: 5.1%; height: 48%;">
+      <img src="opensecretsbook.png" alt="OpenSecrets">
+    </a>
+
+    <!-- National Gallery of Art -->
+    <a class="book" href="https://www.nga.gov/collection.html" target="_blank" style="right: calc(2% + 7.15% + 7.15% + 7.14% + 7.26% + 7.43% + 7.41% + 7.57% + 7.44% + 7.49% + 9.94%); bottom: 5.01%; height: 49%;">
+      <img src="nationalgallerystatue.png" alt="National Gallery of Art">
+    </a>
+
+  </div>
 </body>
 </html>
