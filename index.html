@@ -29,53 +29,107 @@
       display: block;
       pointer-events: none;
     }
+
+    /* Mobile layout */
+    .mobile-only { display: none; }
+
+    @media (max-width: 600px) {
+      html, body {
+        height: auto;
+        overflow: auto;
+      }
+      .desktop-only { display: none; }
+      .mobile-only {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 82px 20px 48px;
+        gap: 32px;
+      }
+      .mobile-only img.wordmark {
+        width: 80%;
+        max-width: 320px;
+      }
+      .mobile-only a img {
+        width: 70vw;
+        max-width: 280px;
+        display: block;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <div class="draggable" data-href="about.html" style="left: 80px; top: 80px;">
-    <img src="aboutcolemanpolaroid.png" alt="About Coleman" style="width: 220px;">
+  <!-- Desktop: draggable items -->
+  <div class="desktop-only">
+    <div class="draggable" data-href="about.html" style="left: 6%; top: 9%;">
+      <img src="aboutcolemanpolaroid.png" alt="About Coleman" style="width: min(220px, 28vw);">
+    </div>
+
+    <div class="draggable" data-href="armyourself.html" style="left: 57%; top: 9%;">
+      <img src="armyourselfbook.png" alt="Arm Yourself" style="width: min(220px, 28vw);">
+    </div>
+
+    <div class="draggable" data-href="oldprojects.html" style="left: 29%; top: 33%;">
+      <img src="oldprojects.png" alt="Old Projects" style="width: min(220px, 28vw);">
+    </div>
   </div>
 
-  <div class="draggable" data-href="armyourself.html" style="left: 800px; top: 80px;">
-    <img src="armyourselfbook.png" alt="Arm Yourself" style="width: 220px;">
-  </div>
-
-  <div class="draggable" data-href="oldprojects.html" style="left: 400px; top: 300px;">
-    <img src="oldprojects.png" alt="Old Projects" style="width: 220px;">
+  <!-- Mobile: stacked layout -->
+  <div class="mobile-only">
+    <img class="wordmark" src="colemanrocks-wordmark.png" alt="coleman.rocks">
+    <a href="about.html"><img src="aboutcolemanpolaroid.png" alt="About Coleman"></a>
+    <a href="armyourself.html"><img src="armyourselfbook.png" alt="Arm Yourself"></a>
+    <a href="oldprojects.html"><img src="oldprojects.png" alt="Old Projects"></a>
   </div>
 
   <script>
-    let highestZ = 10;
-
     document.querySelectorAll('.draggable').forEach(el => {
+      let highestZ = 10;
+
       el.addEventListener('mousedown', e => {
         e.preventDefault();
-
         highestZ++;
         el.style.zIndex = highestZ;
-
         const startX = e.clientX - el.offsetLeft;
         const startY = e.clientY - el.offsetTop;
         let dragged = false;
-
         function onMove(e) {
           dragged = true;
           el.style.left = (e.clientX - startX) + 'px';
           el.style.top  = (e.clientY - startY) + 'px';
         }
-
         function onUp() {
           document.removeEventListener('mousemove', onMove);
           document.removeEventListener('mouseup', onUp);
-          if (!dragged && el.dataset.href) {
-            window.location.href = el.dataset.href;
-          }
+          if (!dragged && el.dataset.href) window.location.href = el.dataset.href;
         }
-
         document.addEventListener('mousemove', onMove);
         document.addEventListener('mouseup', onUp);
       });
+
+      el.addEventListener('touchstart', e => {
+        e.preventDefault();
+        highestZ++;
+        el.style.zIndex = highestZ;
+        const touch = e.touches[0];
+        const startX = touch.clientX - el.offsetLeft;
+        const startY = touch.clientY - el.offsetTop;
+        let dragged = false;
+        function onMove(e) {
+          dragged = true;
+          const t = e.touches[0];
+          el.style.left = (t.clientX - startX) + 'px';
+          el.style.top  = (t.clientY - startY) + 'px';
+        }
+        function onEnd() {
+          el.removeEventListener('touchmove', onMove);
+          el.removeEventListener('touchend', onEnd);
+          if (!dragged && el.dataset.href) window.location.href = el.dataset.href;
+        }
+        el.addEventListener('touchmove', onMove, { passive: false });
+        el.addEventListener('touchend', onEnd);
+      }, { passive: false });
     });
   </script>
 
