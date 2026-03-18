@@ -14,13 +14,66 @@
     body {
       background: url('tableofcontentsbook.png') center center / cover no-repeat;
     }
+
+    .mobile-toc { display: none; }
+
+    @media (max-width: 600px) {
+      html, body { height: auto; overflow: auto; }
+      body { background: #f2deb3; }
+      .desktop-links { display: none; }
+      .mobile-toc {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 32px 64px;
+        gap: 0;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .mobile-toc h1 {
+        font-size: 1.6em;
+        font-weight: normal;
+        text-decoration: underline;
+        color: #2a1a0a;
+        margin-bottom: 32px;
+        letter-spacing: 1px;
+      }
+      .mobile-toc a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 1.2em;
+        color: #2a1a0a;
+        text-decoration: none;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(80, 40, 0, 0.25);
+      }
+      .mobile-toc a:first-of-type {
+        border-top: 1px solid rgba(80, 40, 0, 0.25);
+      }
+      .mobile-toc a:active {
+        background: rgba(80, 40, 0, 0.08);
+      }
+    }
   </style>
 </head>
 <body>
-  <a href="presentations.html" style="position: fixed; display: block; left: 56.21%; top: 45.78%; width: 38.26%; height: 3.67%; background: transparent;"></a>
-  <a href="tools.html"         style="position: fixed; display: block; left: 56.21%; top: 50.21%; width: 38.26%; height: 3.67%; background: transparent;"></a>
-  <a href="writings.html"      style="position: fixed; display: block; left: 56.21%; top: 54.67%; width: 38.26%; height: 3.67%; background: transparent;"></a>
-  <a href="littlegames.html"   style="position: fixed; display: block; left: 56.21%; top: 59.1%; width: 38.26%; height: 3.67%; background: transparent;"></a>
-  <a href="other.html"         style="position: fixed; display: block; left: 56.21%; top: 63.56%; width: 38.26%; height: 3.67%; background: transparent;"></a>
+  <!-- Desktop click zones -->
+  <div class="desktop-links">
+    <a href="presentations.html" style="position: fixed; display: block; left: 56.21%; top: 45.78%; width: 38.26%; height: 3.67%; background: transparent;"></a>
+    <a href="tools.html"         style="position: fixed; display: block; left: 56.21%; top: 50.21%; width: 38.26%; height: 3.67%; background: transparent;"></a>
+    <a href="writings.html"      style="position: fixed; display: block; left: 56.21%; top: 54.67%; width: 38.26%; height: 3.67%; background: transparent;"></a>
+    <a href="littlegames.html"   style="position: fixed; display: block; left: 56.21%; top: 59.1%;  width: 38.26%; height: 3.67%; background: transparent;"></a>
+    <a href="other.html"         style="position: fixed; display: block; left: 56.21%; top: 63.56%; width: 38.26%; height: 3.67%; background: transparent;"></a>
+  </div>
+
+  <!-- Mobile list -->
+  <div class="mobile-toc">
+    <h1>Old Projects</h1>
+    <a href="presentations.html">Presentations</a>
+    <a href="tools.html">Tools</a>
+    <a href="writings.html">Writings</a>
+    <a href="littlegames.html">Little Games</a>
+    <a href="other.html">Other</a>
+  </div>
 </body>
 </html>
