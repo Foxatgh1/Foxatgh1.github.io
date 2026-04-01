@@ -40,7 +40,19 @@
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/colemanmartinis/Downloads/ChatGPT Image Mar 18, 2026, 01_51_44 PM.png\")",
       "Bash(sips -g pixelWidth -g pixelHeight \"/Users/colemanmartinis/Downloads/ChatGPT Image Mar 18, 2026, 01_21_43 PM.png\")",
       "Bash(git checkout HEAD -- tableofcontentsbook.png oldprojects.html)",
-      "Bash(for f in index.html about.html resume.html armyourself.html oldprojects.html presentations.html tools.html writings.html littlegames.html other.html; do sed -i '' 's|<meta name=\"viewport\".*>|&\\\\n  <link rel=\"icon\" type=\"image/png\" href=\"favicon.png\">|' \"$f\"; done)"
+      "Bash(for f in index.html about.html resume.html armyourself.html oldprojects.html presentations.html tools.html writings.html littlegames.html other.html; do sed -i '' 's|<meta name=\"viewport\".*>|&\\\\n  <link rel=\"icon\" type=\"image/png\" href=\"favicon.png\">|' \"$f\"; done)",
+      "Bash(claude doctor)",
+      "Bash(npm i -g @anthropic-ai/claude-code)",
+      "Read(//Users/colemanmartinis/Downloads/**)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\(''/Users/colemanmartinis/Downloads/littlegamesbook.png''\\); print\\(img.size\\)\")",
+      "Bash(open:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(du -sh /Users/colemanmartinis/Desktop/coleman.rocks/*)",
+      "WebFetch(domain:www.dropbox.com)",
+      "Bash(mkdir -p /Users/colemanmartinis/Desktop/coleman.rocks/assets)",
+      "Bash(mv /Users/colemanmartinis/Desktop/coleman.rocks/*.png /Users/colemanmartinis/Desktop/coleman.rocks/*.jpg /Users/colemanmartinis/Desktop/coleman.rocks/*.jpeg /Users/colemanmartinis/Desktop/coleman.rocks/assets/)",
+      "Bash(grep -rn '\\\\.png\\\\|\\\\.jpg\\\\|\\\\.jpeg' /Users/colemanmartinis/Desktop/coleman.rocks/*.html)"
     ]
   }
 }
