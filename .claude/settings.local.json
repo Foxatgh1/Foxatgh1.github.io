@@ -52,7 +52,22 @@
       "WebFetch(domain:www.dropbox.com)",
       "Bash(mkdir -p /Users/colemanmartinis/Desktop/coleman.rocks/assets)",
       "Bash(mv /Users/colemanmartinis/Desktop/coleman.rocks/*.png /Users/colemanmartinis/Desktop/coleman.rocks/*.jpg /Users/colemanmartinis/Desktop/coleman.rocks/*.jpeg /Users/colemanmartinis/Desktop/coleman.rocks/assets/)",
-      "Bash(grep -rn '\\\\.png\\\\|\\\\.jpg\\\\|\\\\.jpeg' /Users/colemanmartinis/Desktop/coleman.rocks/*.html)"
+      "Bash(grep -rn '\\\\.png\\\\|\\\\.jpg\\\\|\\\\.jpeg' /Users/colemanmartinis/Desktop/coleman.rocks/*.html)",
+      "Bash(xargs ls:*)",
+      "Bash(xargs du:*)",
+      "Bash(xargs stat:*)",
+      "Bash(cwebp -version)",
+      "Bash(ffmpeg -version)",
+      "Bash(brew install:*)",
+      "Bash(python3 -c \"from PIL import Image; print\\(''PIL available''\\)\")",
+      "Bash(python3 -c \"import importlib; print\\(importlib.util.find_spec\\(''PIL''\\)\\)\")",
+      "Bash(python3:*)",
+      "Bash(grep:*)",
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i '' 's/type=\"\"image\\\\/png\"\" href=\"\"assets\\\\/favicon.webp\"\"/type=\"\"image\\\\/webp\"\" href=\"\"assets\\\\/favicon.webp\"\"/g' \"$f\")",
+      "Bash(done)",
+      "Bash(xargs rm:*)"
     ]
   }
 }
